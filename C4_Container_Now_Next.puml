@@ -1,0 +1,59 @@
+' Requires at least https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+' so that all the required functions are in place
+!$CONTAINER_NOW_COLOR ?= $CONTAINER_BG_COLOR
+' Change the color here, probably need to change the color in C4_System_Now_Next.puml
+!$CONTAINER_NEXT_COLOR ?= "#BE9F22"
+!$CONTAINER_LATER_COLOR ?= "#7F688B"
+
+' Add the explicit skin-params for our new containers
+skinparam rectangle<<container_now>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_NOW_COLOR
+    BorderColor $CONTAINER_NOW_COLOR
+}
+
+skinparam rectangle<<container_next>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_NEXT_COLOR
+    BorderColor $CONTAINER_NEXT_COLOR
+}
+
+skinparam rectangle<<container_later>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_LATER_COLOR
+    BorderColor $CONTAINER_LATER_COLOR
+}
+
+
+!unquoted procedure Container_Now($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="", $baseShape="rectangle")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine($baseShape , "container_now", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+
+!unquoted procedure Container_Next($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="", $baseShape="rectangle")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine($baseShape , "container_next", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Container_Later($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="", $baseShape="rectangle")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine($baseShape , "container_later", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!procedure CONTAINER_LEGEND_WITH_COLOR()
+hide stereotype
+legend right
+|<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
+|<$CONTAINER_NOW_COLOR> Now |
+|<$CONTAINER_NEXT_COLOR> Planned |
+|<$CONTAINER_LATER_COLOR> Later |
+|<$SYSTEM_BG_COLOR> System |
+|<$PERSON_BG_COLOR> Person |
+|<$EXTERNAL_PERSON_BG_COLOR> External Person |
+|<$EXTERNAL_SYSTEM_BG_COLOR> External System |
+endlegend
+!endprocedure
