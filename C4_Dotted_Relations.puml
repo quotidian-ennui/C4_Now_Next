@@ -1,0 +1,71 @@
+' Requires at least https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4.puml
+' so that all the required functions are in place
+' Haven't seen a use for neighbor yet.
+
+!unquoted procedure Dotted_Rel($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("..>>", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_BiRel($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<..>>", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_Rel_Back($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel("<<..", $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_Rel_D($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down(".",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Dotted_Rel_Down($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down(".",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_BiRel_D($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("<<.",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Dotted_BiRel_Down($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($down("<<.",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_Rel_U($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up(".",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Dotted_Rel_Up($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up(".",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_BiRel_U($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("<<.",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Dotted_BiRel_Up($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($up("<<.",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_Rel_L($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left(".",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Dotted_Rel_Left($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left(".",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_BiRel_L($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("<<.",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Dotted_BiRel_Left($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($left("<<.",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_Rel_R($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right(".",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Dotted_Rel_Right($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right(".",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure Dotted_BiRel_R($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("<<.",".>>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+!unquoted procedure Dotted_BiRel_Right($from, $to, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+$getRel($right("<<.",">>"), $from, $to, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
