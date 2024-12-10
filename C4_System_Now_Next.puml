@@ -1,0 +1,57 @@
+' Requires at least https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+' so that all the required functions are in place
+
+!$SYSTEM_NOW_COLOR ?= $SYSTEM_BG_COLOR
+!$SYSTEM_NEXT_COLOR ?= "#BE9F22"
+!$SYSTEM_LATER_COLOR ?= "#7F688B"
+
+' Add the explicit skin-params for our new systems
+skinparam rectangle<<system_now>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $SYSTEM_NOW_COLOR
+    BorderColor $SYSTEM_NOW_COLOR
+}
+
+skinparam rectangle<<system_next>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $SYSTEM_NEXT_COLOR
+    BorderColor $SYSTEM_NEXT_COLOR
+}
+
+skinparam rectangle<<system_later>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $SYSTEM_LATER_COLOR
+    BorderColor $SYSTEM_LATER_COLOR
+}
+
+!unquoted procedure System_Now($alias, $label, $descr="", $sprite="", $tags="", $link="", $type="", $baseShape="rectangle")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+  $getElementLine($baseShape, "system_now", $alias, $label, $type, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure System_Next($alias, $label, $descr="", $sprite="", $tags="", $link="", $type="", $baseShape="rectangle")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+  $getElementLine($baseShape, "system_next", $alias, $label, $type, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure System_Later($alias, $label, $descr="", $sprite="", $tags="", $link="", $type="", $baseShape="rectangle")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+  $getElementLine($baseShape, "system_later", $alias, $label, $type, $descr, $sprite, $tags, $link)
+!endprocedure
+
+
+!procedure SYSTEM_LEGEND_WITH_COLOR()
+hide stereotype
+legend right
+|<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
+|<$SYSTEM_NOW_COLOR> Now |
+|<$SYSTEM_NEXT_COLOR> Planned |
+|<$SYSTEM_LATER_COLOR> Later |
+|<$PERSON_BG_COLOR> person |
+|<$EXTERNAL_PERSON_BG_COLOR> external person |
+|<$EXTERNAL_SYSTEM_BG_COLOR> external system |
+endlegend
+!endprocedure
