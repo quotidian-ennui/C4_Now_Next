@@ -13,7 +13,35 @@ skinparam rectangle<<container_now>> {
     BorderColor $CONTAINER_NOW_COLOR
 }
 
+skinparam database<<container_now>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_NOW_COLOR
+    BorderColor $CONTAINER_NOW_COLOR
+}
+
+skinparam queue<<container_now>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_NOW_COLOR
+    BorderColor $CONTAINER_NOW_COLOR
+}
+
 skinparam rectangle<<container_next>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_NEXT_COLOR
+    BorderColor $CONTAINER_NEXT_COLOR
+}
+
+skinparam queue<<container_next>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_NEXT_COLOR
+    BorderColor $CONTAINER_NEXT_COLOR
+}
+
+skinparam database<<container_next>> {
     StereotypeFontColor ELEMENT_FONT_COLOR
     FontColor ELEMENT_FONT_COLOR
     BackgroundColor $CONTAINER_NEXT_COLOR
@@ -27,6 +55,19 @@ skinparam rectangle<<container_later>> {
     BorderColor $CONTAINER_LATER_COLOR
 }
 
+skinparam database<<container_later>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_LATER_COLOR
+    BorderColor $CONTAINER_LATER_COLOR
+}
+
+skinparam queue<<container_later>> {
+    StereotypeFontColor ELEMENT_FONT_COLOR
+    FontColor ELEMENT_FONT_COLOR
+    BackgroundColor $CONTAINER_LATER_COLOR
+    BorderColor $CONTAINER_LATER_COLOR
+}
 
 !unquoted procedure Container_Now($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="", $baseShape="rectangle")
   ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
@@ -42,6 +83,36 @@ skinparam rectangle<<container_later>> {
 !unquoted procedure Container_Later($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="", $baseShape="rectangle")
   ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
   $getElementLine($baseShape , "container_later", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure ContainerDb_Now($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine("database" , "container_now", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure ContainerDb_Next($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine("database" , "container_next", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure ContainerDb_Later($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine("database" , "container_later", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure ContainerQueue_Now($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine("queue" , "container_now", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure ContainerQueue_Next($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine("queue" , "container_next", $alias, $label, $techn, $descr, $sprite, $tags, $link)
+!endprocedure
+
+!unquoted procedure ContainerQueue_Later($alias, $label, $techn="", $descr="", $sprite="", $tags="", $link="")
+  ' @see https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+  $getElementLine("queue" , "container_later", $alias, $label, $techn, $descr, $sprite, $tags, $link)
 !endprocedure
 
 !procedure CONTAINER_LEGEND_WITH_COLOR()
