@@ -8,7 +8,7 @@ Essentially it just defines some new colours for `System_now` (same as existing 
 
 So if you wanted this :
 
-![example-uml](https://www.plantuml.com/plantuml/png/ZP51Qzj048Nl-XLZdro8hKjEFQLsJ1jGd5Qs2OM2M4jZQwWqg-xEPfly-iucjLLwA0KXnCvxtpozlV5Yd8I-ooOD7eaHLjVLlYoW5Hdy-pnt9YvE96qu18-kjYp8igXjdm-TuUISUsawEkIhw_ddTBI_B_BUU47t9tFrK3pio__0_WXMg273SsGEbAjtOsErmP-YME9iGbnteJadpHFSzeFbH1WqqAYux4sYxRDcwi-mVqflhGWsLOcT4RBitxJPzkjsjxwlYlN7zUQsUhpRVNhrbBDtsHcku1dhwmgc7-v0MkBJLB-tjaVB2D6mU31l0uXQ0AYC64WMqv5YuwmEpY4dpj8w5NVFWCSZrQI7YRXhoOC-iJK24Q4rJpWI2gFrpmnLXyxMt-lM4AkdDDpO7fRXvILQroJCb_1wYP0Q3A9xKfxbnVID7uaPtHKiTMOdkY7JLiPql_zLd8gzJiVcHitVCPx8WDT2e3SdgjLqWznemRy0)
+![example-uml](./example-uml.png)
 
 You would do this:
 
